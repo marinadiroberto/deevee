@@ -1,0 +1,330 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Deevee - Esplora</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      .btn{
+          border-radius: 66px;
+          font-size: 18px;
+          padding-left: 24px;
+          padding-right:24px;
+          font-weight: bold;
+      }
+      .btn-primary{
+            background-color: #FF2445;
+            border: none;
+            color: #fff;
+      }
+      .btn-secondary{
+            background-color: #fff;
+            border: none;
+            color: #000;
+      }
+      .dummy{
+          width: 150px;
+          height: 150px;
+          background-color: #ddd;
+          margin-bottom: 18px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+      .horrible-dummy{
+          background: #ddd; 
+          min-height: 400px;
+          border-radius: 32px;
+          padding-right: 0;
+          padding-left: 0;
+          background-size: cover !important;
+          background-position: center !important;
+      }
+      .btn:hover{
+        background-color:#00E8AD!important;
+        color: #fff !important;
+      }
+      .white-stripe{
+        background: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        position: relative;
+        bottom: 0;
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+        height: 50px;
+        top: 350px;
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+      }
+      .white-stripe>p{
+        padding-top: 15px;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column h-100 text-center text-white">
+    <header class="mb-auto pt-3 pb-3 text-dark" style="background: #fff; padding-left: 1rem; padding-right: 1rem;">
+        <div>
+          <a href="index.html" class="float-md-start mb-0 font-weight-bold" style="font-weight: bold">
+            <img width="150" src="https://i.postimg.cc/1R2KDCrD/deeve-png2.png" align="left"></a>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+           
+            
+          </nav>
+        </div>
+      </header> 
+<div class="d-flex w-100 h-100 p-3 mx-auto flex-column mt-3" style="background: #fff">
+  <main class="px-3">
+      <div class="row pb-5">
+            <div class="col-2">
+                <button type="button" id="all" class="btn btn-primary btn-filter" style="min-width: 100%; margin-right: 2px; padding-top: 10px; padding-bottom: 10px;">Esplora</button>
+            </div>
+            <div class="col-2">
+                <button type="button" id="graphic_design" class="btn btn-outline-dark btn-filter" style="min-width: 100%; margin-right: 2px; padding-top: 10px; padding-bottom: 10px; border: none;">Graphic Design</button>
+            </div>
+            <div class="col-2">
+                <button type="button" id="illustrazione" class="btn btn-outline-dark btn-filter" style="min-width: 100%; margin-right: 2px; padding-top: 10px; padding-bottom: 10px; border: none;">Illustrazione</button>
+            </div>
+           
+            <div class="col-2">
+                <button type="button" id="fotografia" class="btn btn-outline-dark btn-filter" style="min-width: 100%; margin-right: 2px; padding-top: 10px; padding-bottom: 10px; border: none;">Fotografia</button>
+            </div>
+            <div class="col-2">
+
+            </div>
+            <div class="col-2" style="padding-right: 3.7rem;">
+                
+            </div>
+      </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend" style="background: #fff">
+            <span class="input-group-text" style="background: #fff; border-right: none; border-radius: 66px; border-top-right-radius: 0; border-bottom-right-radius: 0;" id="basic-addon1"><i class="bi-search"></i>
+            </span>
+          </div>
+          <input type="text" id="search" class="form-control" style="border-radius: 66px; border-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; " placeholder="Cerca il progetto..." aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row" id="imageContainer" style="padding-top: 32px;">
+      
+    </div>
+  
+  </main>
+
+
+</div>
+<footer class="mt-auto text-white-50">
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+
+    <script>
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+          });
+        const createTemplate = (images) => {
+          $('#imageContainer').empty();
+          images.forEach(x => {
+              const template = ('<div class="col-4 px-2 pb-4"><a style="text-decoration: none;" href="'+ x.google_drive +'"><div class="horrible-dummy" style="background: url('+ x.url +');">\
+                \
+                <div class="white-stripe">\
+                  <p>' + x.title + '<strong> "'+x.project+'"</strong></p>\
+                </div>\
+              </div></a></div>');
+              $('#imageContainer').append(template);
+          })
+        }
+        $(document).ready(function(){
+          let images = [{
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/PqjWcswk/Calcestruzzo-320.jpg",
+            title: "Alessia D'Aniello - cemento cedendo",
+            project: "foto",
+            category: 'fotografia',
+            author: "Alessia D'Aniello",
+            google_drive: 'https://drive.google.com/file/d/1fmg1ixg9OqElDOFR9Zjy9D3Px36WbSgB/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/tC4GB4Lh/hhghg.png",
+            title: "Marina di Roberto - progetto",
+            project: "Il mito di Persefone",
+            category: 'illustrazione',
+            author: 'Marina di Roberto',
+            google_drive: 'https://drive.google.com/file/d/1Ilq6Ev99Wrphsw4YVqdcB3CLzUb6jfy4/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/h477fYJT/1-yo.jpg" ,
+            title: "Federica Cozzolino -Yo Season visual identity",
+            project: "Yo Season",
+            category: 'graphic_design',
+            author: 'Federica Cozzolino',
+            google_drive: 'https://drive.google.com/file/d/1w3UiQllxGHQW0W0aQTgfqAQGlzilyrPe/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA ___
+            url: "https://i.postimg.cc/kXPhCZ8f/20210630111853-IMG-3981.jpg",
+            title: "Alessia D'Aniello - Napoli che corre",
+            project: "Napoli che corre",
+            category: 'fotografia',
+            author: "Alessia D'Aniello",
+            google_drive: 'https://drive.google.com/file/d/1SgeIlSEJoxXwwxwOpnfgBnY4bw5qsfW5/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/v8J00W0R/Immagine-2022-06-11-201906.png",
+            title: "Marina Di Roberto - Re Mida",
+            project: "libro illustrato",
+            category: 'illustrazione',
+            author: 'Marina Di Roberto',
+            google_drive: 'https://drive.google.com/file/d/14bo-sCpHSXfp8EDPfWd6rlXQ6wYHDzje/view?usp=sharing'
+          },   
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/FFGvjyYp/3333.png",
+            title: "Federica Cozzolino - Banca del Fucino Brand Restyling",
+            project: "Restyling Banca del Fucino",
+            category: 'graphic_design',
+            author: 'Federica Cozzolino',
+            google_drive: 'https://drive.google.com/file/d/1ds990Cxh9M9gRp5noOkh_YTY1esLbKLc/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA___
+            url: "https://i.postimg.cc/CKXLxDjC/Whats-App-Image-2022-06-11-at-19-57-08-1.jpg",
+            title: "Alessia D'Aniello",
+            project: "Woman in comics",
+            category: 'illustrazione',
+            author: "Alessia D'Aniello",
+            google_drive: 'https://drive.google.com/file/d/1DDYl5CtiYcAYy8iJ0uHfz2uPpQ-SP9Po/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/mgz2TWQ1/Immagine-2022-06-11-202046.png",
+            title: "Marina Di Roberto - FunnyBaby",
+            project: "Logo_Design",
+            category: 'graphic_design',
+            author: 'Marina Di Roberto',
+            google_drive: 'https://drive.google.com/file/d/1m5zcIBF1VKcz8Cs2zehBGc2pcMNdSNTR/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/Hk2t6LCQ/Risorsa-1.png",
+            title: "Federica Cozzolino - Kuhl Brand Restyling",
+            project: "Restyling Kuhl",
+            category: 'graphic_design',
+            author: 'Federica Cozzolino',
+            google_drive: 'https://drive.google.com/file/d/1rkd1DJ0tuDzswa9yj_t030tO_XX7i92d/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA__
+            url: "https://i.postimg.cc/zfJPHPk8/Whats-App-Image-2022-06-11-at-19-53-21.jpg",
+            title: "Alessia D'Aniello-Dresscom",
+            project: "Restyling Dresscom",
+            category: 'graphic_design',
+            author: "Alessia D'Aniello",
+            google_drive: 'https://drive.google.com/file/d/1VbSuTQbk227el-5kwDvbgNoN5pKaIkL1/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/65zG8K2H/Immagine-2022-06-11-201938.png",
+            title: "Marina Di Roberto - Avventura in fondo al mare",
+            project: "libro illustrato",
+            category: 'illustrazione',
+            author: 'Marina Di Roberto',
+            google_drive: 'https://drive.google.com/file/d/14JMEHuH2CxPZe8fnC_uF6xZxQNKEhFHI/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/5tGQgXnK/hhhh.png",
+            title: "Federica Cozzolino - Napoli,Città della Musica",
+            project: "Napoli City Music",
+            category: 'graphic_design',
+            author: 'Federica Cozzolino',
+            google_drive: 'https://drive.google.com/file/d/1So4Y0xBA-vA9RkBDCmp9kP1VQiyNoZF1/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA____
+            url: "https://i.postimg.cc/jjW1631f/Whats-App-Image-2022-06-11-at-21-11-09-1.jpg",
+            title: "Alessia D'Aniello - Napoli Città Della Musica",
+            project: "Napoli City Music",
+            category: 'graphic_design',
+            author: "Alessia D'Aniello",
+            google_drive: 'https://drive.google.com/file/d/1X_OAP4_WOB6bZISzJQXipbfINdnhk6En/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/kGX8VSD1/marina-di-roberto.jpg",
+            title: "Marina Di Roberto - progetto",
+            project: "Altramarea",
+            category: 'illustrazione',
+            author: 'Marina Di Roberto',
+            google_drive: 'https://drive.google.com/file/d/1lx-o_4N7L7D9qdacFlSg6wKY68-i-2st/view?usp=sharing'
+          },
+          {
+            //CAMBIATE LE IMMAGINI QUA
+            url: "https://i.postimg.cc/qgV8Jxz9/Immagine-2022-06-11-210147.png",
+            title: "Federica Cozzolino - La Movida",
+            project: "Logo Design",
+            category: 'graphic_design',
+            author: 'Federica Cozzolino',
+            google_drive: 'https://drive.google.com/file/d/1CGRl2uSbDuW7C--dhLpNVXRRWNRSrDyi/view?usp=sharing'
+          }];
+        let filtered = params.c ?
+                  images.filter(x => x.category === params.c)
+                : images;
+
+        createTemplate(filtered);
+        const fuse = new Fuse(images, {keys: [
+          'title',
+          'project'
+        ]});
+
+        $('#search').on('input', function(e){
+          if(e.target.value !== "")createTemplate(images);
+          const filteredImages = fuse.search(e.target.value).map(x => x.item);
+          createTemplate(filteredImages);
+        })
+
+        $('.btn-filter').click(function(btn) {
+          if($(btn.target).attr('id') === 'all'){createTemplate(images);return;}
+          const filteredImages = images.filter(x => x.category === $(btn.target).attr('id'));
+          createTemplate(filteredImages);
+        }); 
+      });
+      
+
+
+    </script>
+  </body>
+</html>
