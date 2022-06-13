@@ -79,15 +79,15 @@
       }
       #profile{
         width: 150px;
-        height: 150px;
-        position: absolute;
-        border-radius: 120px;
-        left: 12%;
-        top: 12%;
+        height: 150px; 
+        border-radius: 120px; 
       }
-      @media (min-width: 768px) {
+      @media only screen and (max-width: 600px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
+        }
+        .col-6{
+          width: 100%;
         }
       }
     </style>
@@ -108,7 +108,7 @@
     <div class="col-lg-4">
           <div class="boxed-aside" style="background-color: #000038; height: 98.5%; width: 100%; margin-top: 32px; padding-bottom: 32px; border-radius: 32px; display:flex; flex-direction: column; align-items: center;">
               <img src="Nuova cartella/foto_e_presentazioni/alessia/MicrosoftTeams-image.png" id="profile" />
-              <strong id="name" style="padding-top: 120px; font-size: 21px; padding-bottom: 12px;">Alessia D'Aniello</strong>
+              <strong id="name" style=" font-size: 21px; padding-bottom: 12px;">Alessia D'Aniello</strong>
               <div style="display: flex; flex-direction: row; height: 24px;"><i class="bi bi-geo-alt" style="margin-right: 4px"></i>Italy</div>
               <div style="display: flex; flex-direction: row; height: 24px;"><i class="bi bi-envelope" style="margin-right: 4px"></i> <p id="email">Italy</p></div>
               <div style="display: flex; flex-direction: row; height: 24px;"><i class="bi bi-phone" style="margin-right: 4px"></i> <p id="telefono">Italy</p></div>

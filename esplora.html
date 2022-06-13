@@ -77,9 +77,20 @@
       .white-stripe>p{
         padding-top: 15px;
       }
-      @media (min-width: 768px) {
+      @media only screen and (max-width: 600px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
+        }
+        .col-4, .col-6{
+          width: 100%;
+        }
+
+        .center{
+          flex-direction: column;
+          align-items: center;
+        }
+        .col-2{
+          width: 100%;
         }
       }
     </style>
@@ -97,7 +108,7 @@
       </header> 
 <div class="d-flex w-100 h-100 p-3 mx-auto flex-column mt-3" style="background: #fff">
   <main class="px-3">
-      <div class="row pb-5">
+      <div class="row pb-5 center">
             <div class="col-2">
                 <button type="button" id="all" class="btn btn-primary btn-filter" style="min-width: 100%; margin-right: 2px; padding-top: 10px; padding-bottom: 10px;">Esplora</button>
             </div>
